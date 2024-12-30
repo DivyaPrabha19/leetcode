@@ -1,0 +1,39 @@
+THE SOLUTION FOR REMOVE A ELEMENT:
+
+class Solution(object):
+    def removeElement(self, nums, val):
+        k=0
+        for i in range(len(nums)):
+            if nums[i]!=val:
+                nums[k]=nums[i]
+                k+=1
+        return k
+
+PROGRAM EXPLAINATION:
+
+From the above program, the main function is already defined. From the question, k is determined as pointer to denote the index place of nums. nums has some list values and 
+val is already given in the program
+
+The program is to eliminate val in nums. To that, assign a for loop.In the for loop, the end value will be thw len(nums).
+Iteration 1:
+i=0, nums[0]=3(from the given question) , 
+if 3!=3 ----> false. so don't do anything
+
+Iteration 2:
+i=1, nums[1]=2(from the given question) , 
+if 2!=3 ----> true. so assign nums[0]=3 as nums[0]=nums[1] ---> nums[0]=2 and k=1 now
+
+Iteration 3:
+i=2, nums[2]=2(from the given question) , 
+if 2!=3 ----> true. so assign nums[1]=2 as nums[1]=nums[2] ---> nums[1]=2 and k=2 now
+
+Iteration 4:
+i=3, nums[3]=3(from the given question) , 
+if 3!=3 ----> false
+
+FINALLY return k which is 2
+
+In the main function, already assigned that print the values upto k.From nums, it iterates and print upto k-1. Because the end value will be always end-1
+
+
+
