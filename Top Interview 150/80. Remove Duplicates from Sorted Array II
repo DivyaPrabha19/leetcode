@@ -1,0 +1,37 @@
+class Solution(object):
+    def removeDuplicates(self, nums):
+        if not nums:
+            return 0
+
+        ptr, count = 0, 1
+      
+        for i in range(1, len(nums)):
+            if nums[i] == nums[ptr]: 
+                if count < 2: 
+                    ptr += 1
+                    nums[ptr] = nums[i]
+                    count += 1
+            else:  
+                ptr += 1
+                nums[ptr] = nums[i]
+                count = 1  
+        
+        return ptr + 1
+
+
+
+What It Does:
+Edge Case:
+
+If the input nums is empty, it immediately returns 0.
+Two Pointers:
+
+ptr tracks the position where the next valid element will be placed.
+i iterates through the array starting from index 1.
+Count Variable:
+
+Tracks how many times the current number has appeared consecutively. If it's less than 2, the number is placed at ptr.
+Logic:
+
+If nums[i] is the same as nums[ptr] and the count is less than 2, the number is added to the result.
+If nums[i] is different, it resets the count to 1 and places the new number.
