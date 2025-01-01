@@ -1,0 +1,22 @@
+class Solution(object):
+    def removeDuplicates(self, nums):
+        nums[:]=sorted(set(nums))
+        return len(nums)
+
+
+Program Explanation:
+
+1. Sorting the array:
+The sorted() function in Python arranges the elements in ascending order. If the input list is unordered, this function will sort it.
+
+
+2. Removing duplicates:
+The set() function removes duplicate elements from the sorted list by converting it into a set, which only stores unique elements.
+
+
+3. Updating the list:
+The line nums[:] = sorted(set(nums)) assigns the sorted, duplicate-free elements back to the original list nums.
+
+
+4. Returning the count:
+The program uses len(nums) to calculate and return the number of unique elements remaining in the list after removing duplicates.
